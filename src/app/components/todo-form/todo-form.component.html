@@ -1,3 +1,8 @@
-<mat-form-field>
-  <input matInput [formControl]="task">
-</mat-form-field>
+<form>
+  <mat-form-field>
+    <input matInput [formControl]="task">
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutAlign="end">
+    <button mat-button color="primary" (click)="onAddTodo()">Add To Do</button>
+  </div>
+</form>

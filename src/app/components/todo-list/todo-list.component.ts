@@ -10,14 +10,14 @@ import { MatCheckboxChange } from '@angular/material';
 })
 export class TodoListComponent {
 
-  @Input() toDos: Todo[];
+  @Input() todos: Todo[];
 
-  @Output() toDoChange = new EventEmitter<Todo>();
+  @Output() todoChange = new EventEmitter<Todo>();
 
   constructor() { }
 
   onCompleteChange(toDo: Todo, change: MatCheckboxChange) {
-    this.toDoChange.emit({
+    this.todoChange.emit({
       ...toDo,
       complete: change.checked
     });

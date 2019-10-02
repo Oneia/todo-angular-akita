@@ -6,9 +6,9 @@
           <mat-card-title><h2>To Do List</h2></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <ng-container *ngIf="incompleteToDos | async; let toDos">
-            <ng-container *ngIf="toDos.length > 0; else allDone">
-              <app-todo-list [toDos]="toDos" (toDoChange)="onCompleteToDo($event)"></app-todo-list>
+          <ng-container *ngIf="incompleteTodos$ | async; let todos">
+            <ng-container *ngIf="todos.length > 0; else allDone">
+              <app-todo-list [todos]="todos" (todoChange)="onCompleteTodo($event)"></app-todo-list>
             </ng-container>
             <ng-template #allDone>
               <div fxLayout="row" fxLayoutAlign="center center">
@@ -24,10 +24,7 @@
           <mat-card-title><h2>Add To Do</h2></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-todo-form (toDoChange)="onAddToDoChange($event)"></app-todo-form>
-          <div fxLayout="row" fxLayoutAlign="end">
-            <button mat-button color="primary" (click)="addToDo()">Add To Do</button>
-          </div>
+          <app-todo-form (addTodo)="addTodo($event)"></app-todo-form>
         </mat-card-content>
       </mat-card>
 
@@ -36,7 +33,7 @@
           <mat-card-title><h2>Completed 🎉</h2></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <app-todo-list [toDos]="completeToDos | async" (toDoChange)="onIncompleteToDo($event)"></app-todo-list>
+          <app-todo-list [todos]="completeTodos$ | async" (todoChange)="onIncompleteTodo($event)"></app-todo-list>
         </mat-card-content>
       </mat-card>
     </div>

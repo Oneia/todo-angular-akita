@@ -6,12 +6,12 @@ export interface Todo {
   task: string;
 }
 
-export function createTodo() {
+export function createTodo(index?: number) {
   return {
     id: guid(),
     complete: false,
-    task: '',
+    task: `Task ${index}` ,
   } as Todo;
 }
 
-export const ENTITIES = [...Array(10).keys()].map(() => createTodo())
+export const ENTITIES = [...Array(5).keys()].map((index) => createTodo(index));

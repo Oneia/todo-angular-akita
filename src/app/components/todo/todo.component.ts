@@ -11,7 +11,7 @@ import { MatCheckboxChange } from '@angular/material';
 })
 export class TodoComponent {
 
-  @Input() toDo: Todo;
+  @Input() todo: Todo;
 
   @Output() completeChange = new EventEmitter<MatCheckboxChange>();
 

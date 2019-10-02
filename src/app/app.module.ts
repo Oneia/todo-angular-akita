@@ -16,9 +16,10 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 
 @NgModule({
-  imports: [ 
+  imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -29,7 +30,8 @@ import { TodoFormComponent } from './components/todo-form/todo-form.component';
     MatInputModule,
     MatFormFieldModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AkitaNgDevtools.forRoot(),
   ],
   declarations: [ AppComponent, TodoComponent, TodoListComponent, TodoFormComponent ],
   bootstrap:    [ AppComponent ]
